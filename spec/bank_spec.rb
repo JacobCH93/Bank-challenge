@@ -11,4 +11,11 @@ require './lib/bank'
       subject.deposit(300)
       expect(subject.balance).to eq(300)
   end
+
+  it 'minuses an amount when depositied' do
+    subject = Bank.new 
+    subject.deposit(300)
+    subject.withdraw(50)
+    expect(subject.balance).to eq(250)
+end
 end 

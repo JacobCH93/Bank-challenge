@@ -1,9 +1,10 @@
 
 class Bank
-attr_reader :balance
+attr_reader :balance, :statement, :date, :withdraw, :deposit, :balance 
 
 def initialize
     @balance = 0
+    @statement = []
 end
 
 def deposit(num)
@@ -14,11 +15,17 @@ def withdraw(num)
     return @balance -= num
 end
 
-def date
+def date 
+    Date.now
+end
+
+def trans
+    @statment << [date.to_s,  withdraw.to_s, deposit.to_s, balance.to_s] 
 
 end
 
 def statement
+    return @statement 
 end
 
 
