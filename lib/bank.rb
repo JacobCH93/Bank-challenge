@@ -1,6 +1,6 @@
 
 class Bank
-attr_reader :balance, :statement, :withdraw, :deposit, :balance, :num1, :num2
+attr_accessor :balance, :statement, :withdraw, :deposit, :balance, :num1, :num2, :date
 
 def initialize
     @balance = 0
@@ -17,11 +17,12 @@ def withdraw(num1)
     
 end
 
-# def bank_date(date)
-#     date.strftime("%d/%m/%Y")
-#   end
+def bank_date(date)
+    time = Time.new
+    date = time.strftime("%d/%m/%Y")
+  end
 
 def state
-    return @statement << [num1, num2, balance]
+    return @statement << bank_date(date), num1, num2, balance
 end
 end
