@@ -8,6 +8,7 @@ require './lib/bank'
 
   it 'adds an amount when depositied' do
       subject = Bank.new 
-      expect(subject.deposit(300)).to eq(300)
+      subject.deposit(300)
+      expect(subject.balance).to eq(300)
   end
 end 

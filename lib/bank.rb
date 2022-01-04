@@ -1,26 +1,24 @@
 
 class Bank
 attr_reader :balance
-START_BALANCE = 0
 
 def initialize
     @balance = 0
 end
 
-def balance
-return @balance 
-end 
-
-def deposit(deposit)
-    return @balance + deposit
+def deposit(num)
+    return @balance += num
 end
 
-def withdraw
-    return @balance - withdraw
+def withdraw(num)
+    return @balance -= num
 end
 
 def date
 
+end
+
+def statement
 end
 
 
