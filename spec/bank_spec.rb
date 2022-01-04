@@ -18,9 +18,15 @@ require './lib/bank'
     expect(subject.balance).to eq(50)
   end
 
+  it 'Insufficent funds' do
+    balance = -50
+    expect { subject.withdraw(100) }.to raise_error ("Insufficent funds")
+  end
+
   it 'returns a statement' do
     subject.deposit(100) 
-    expect(subject.state).to eq ["04/01/2022, 0, 100, 100"]
+    subject.withdraw(50)
+    expect(subject.state).to eq ["04/01/2022, 50, 100, 50"]
   end
 
 end 

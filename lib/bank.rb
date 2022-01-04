@@ -8,14 +8,13 @@ def initialize
 end
 
 def deposit(num2)
-    return @balance += num2.to_i
+    @balance += num2.to_i
 end
 
 def withdraw(num1)
-    fail 'Insufficent funds', if  @balance <= 0
-    else 
-    return @balance -= num1.to_i
-    end
+    fail "Insufficent funds" if  @balance <= 0
+    @balance -= num1.to_i
+    
 end
 
 # def bank_date(date)
@@ -23,6 +22,6 @@ end
 #   end
 
 def state
-    return @statement << [withdraw(num1), deposit(num2), balance]
+    return @statement << [num1, num2, balance]
 end
 end
