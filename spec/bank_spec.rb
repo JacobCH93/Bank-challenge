@@ -1,21 +1,26 @@
 require './lib/bank'
 
  describe Bank do
+  let(:subject) { Bank.new }
+
   it 'Has a starting balance of 0' do
-    subject = Bank.new
     expect(subject.balance).to eq(0)
   end
 
   it 'adds an amount when depositied' do
-      subject = Bank.new 
-      subject.deposit(300)
-      expect(subject.balance).to eq(300)
+      subject.deposit(100)
+      expect(subject.balance).to eq(100)
   end
 
   it 'minuses an amount when depositied' do
-    subject = Bank.new 
-    subject.deposit(300)
+    subject.deposit(100)
     subject.withdraw(50)
-    expect(subject.balance).to eq(250)
-end
+    expect(subject.balance).to eq(50)
+  end
+
+  it 'returns a statement' do
+    subject.deposit(100) 
+    expect(subject.state).to eq ["04/01/2022, 0, 100, 100"]
+  end
+
 end 
