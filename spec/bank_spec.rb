@@ -25,7 +25,13 @@ require './lib/bank'
 
   it 'returns a statement date, tansaction and balance' do
     subject.deposit(100)
-    expect(subject.state).to include(["05/01/2022", "credit: 100", "balance: 100"])
+    expect(subject.state).to include(["05/01/2022", "  ||  100", "    ||        ", " || 100"])
+  end
+
+  it 'returns statement with deposits and withdrawals' do
+    subject.deposit(100)
+    subject.withdraw(70)
+    expect(subject.state).to include(["05/01/2022", "  ||  100", "    ||        ", " || 100"], ["05/01/2022", "  ||        ", "||   70", "    ||  30"])
   end
 
 end 
