@@ -2,6 +2,7 @@ require './lib/bank'
 
  describe Bank do
   let(:subject) { Bank.new }
+  let(:date) { 05/01/2022 }
 
   it 'Has a starting balance of 0' do
     expect(subject.balance).to eq(0)
@@ -25,13 +26,13 @@ require './lib/bank'
 
   it 'returns a statement date, tansaction and balance' do
     subject.deposit(100)
-    expect(subject.state).to include(["05/01/2022", "  ||  100", "    ||        ", " || 100"])
+    expect(subject.state).to include(["05/01/2022", "  ||  £100", "    ||        ", " || £100"])
   end
 
   it 'returns statement with deposits and withdrawals' do
     subject.deposit(100)
     subject.withdraw(70)
-    expect(subject.state).to include(["05/01/2022", "  ||  100", "    ||        ", " || 100"], ["05/01/2022", "  ||        ", "||   70", "    ||  30"])
+    expect(subject.state).to include(["05/01/2022", "  ||  £100", "    ||        ", " || £100"], ["05/01/2022", "  ||        ", "||   £70", "    ||  £30"])
   end
 
 end 

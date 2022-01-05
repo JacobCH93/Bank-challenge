@@ -2,8 +2,15 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    concurrent-ruby (1.1.9)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    i18n (1.8.11)
+      concurrent-ruby (~> 1.0)
+    monetize (1.11.0)
+      money (~> 6.12)
+    money (6.16.0)
+      i18n (>= 0.6.4, <= 2)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
@@ -47,6 +54,7 @@ PLATFORMS
   arm64-darwin-20
 
 DEPENDENCIES
+  monetize
   rspec
   rubocop
   simplecov
