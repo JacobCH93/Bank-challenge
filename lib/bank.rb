@@ -1,6 +1,6 @@
 
 class Bank
-attr_accessor :balance, :statement, :withdraw, :deposit, :balance, :num1, :num2, :date
+attr_accessor :statement, :withdraw, :deposit, :balance, :num1, :num2, :date
 
 def initialize
     @balance = 0
