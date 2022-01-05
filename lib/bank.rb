@@ -15,18 +15,19 @@ end
 
 def deposit(num2)
     @balance += num2.to_i
-   puts @statement << bank_date(date), num2.to_i
+   return (@statement << [bank_date(date), ("credit: #{num2.to_i}"), ("balance: #{@balance}")])
 end
 
 def withdraw(num1)
     fail "Insufficent funds" if  @balance - num1.to_i < 0
     @balance -= num1.to_i
-   puts @statement << bank_date(date), num1.to_i
+   return (@statement << [bank_date(date), ("debit: #{num1.to_i}"), ("balance: #{@balance}")])
     
 end
 
 def state
-    @statement <<  @balance
-   return @statement <<  @balance
+    @statement.each do |date|
+        puts date.join(" ")
+      end
 end
 end
