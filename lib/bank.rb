@@ -13,13 +13,17 @@ end
 
 def deposit(num2)
   @balance += num2
-  return (@statement << [bank_date(date), ("  ||  £#{num2.round(2)}"), ("    ||        "), (" || £#{@balance.round(2)}")])
+  return (@statement << [bank_date(date), 
+  ("  ||  £#{num2.round(2)}"), ("    ||        "),
+  (" || £#{@balance.round(2)}")])
 end
 
 def withdraw(num1)
   fail "Insufficent funds" if  @balance - num1 < 0
   @balance -= num1
-  return (@statement << [bank_date(date), ("  ||        "), ("||   £#{num1.round(2)}"), ("    ||  £#{@balance.round(2)}")])
+  return (@statement << [bank_date(date),
+  ("  ||        "), ("||   £#{num1.round(2)}"), 
+  ("    ||  £#{@balance.round(2)}")])
 end
 
 def state
