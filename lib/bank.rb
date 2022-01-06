@@ -1,32 +1,32 @@
 class Bank
-attr_accessor :statement, :balance, :num1, :num2, :date
+attr_accessor :statement, :balance, :amount, :date
 
 def initialize
   @balance = 0
   @statement = []
 end
 
-def bank_date(date)
+def generate_date(date)
   time = Time.new
   date = time.strftime('%d/%m/%Y')
 end
 
-def deposit(num2)
-  @balance += num2
-  return (@statement << [bank_date(date), 
-  ("  ||  £#{num2.round(2)}"), ("    ||        "),
-  (" || £#{@balance.round(2)}")])
+def deposit(amount)
+  @balance += amount
+  return (@statement << [generate_date(date), 
+  ("  ||  #{amount.round(2)}"), ("    ||        "),
+  (" || #{@balance.round(2)}")])
 end
 
-def withdraw(num1)
-  fail "Insufficent funds" if  @balance - num1 < 0
-  @balance -= num1
-  return (@statement << [bank_date(date),
-  ("  ||        "), ("||   £#{num1.round(2)}"), 
-  ("    ||  £#{@balance.round(2)}")])
+def withdraw(amount)
+  fail "Insufficent funds" if  @balance - amount < 0
+  @balance -= amount
+  return (@statement << [generate_date(date),
+  ("  ||        "), ("||   #{amount.round(2)}"), 
+  ("    ||  #{@balance.round(2)}")])
 end
 
-def state
+def generate_statement
   puts "     Date    ||  Credit ||  Debit   ||  Balance"
   @statement.each do |date|
     puts date.join(" ")
