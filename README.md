@@ -23,3 +23,8 @@ I would need a balance and then be able to add and subtract from it. I would alo
 05/01/2022   ||         ||   £10.11     ||  £59.89
 05/01/2022   ||         ||   £10.11     ||  £49.78
 ```
+
+## Example of the program in use
+<img width="777" alt="Screenshot 2022-01-06 at 16 16 03" src="https://user-images.githubusercontent.com/77504397/148415021-5b93ebf3-e03d-497b-b9ae-881b803127af.png">
+
+
