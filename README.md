@@ -3,6 +3,10 @@
 ## The aim of this Challenge
 To make a simple banking application that can be used in IRB, that can keep track of deposits, withdrawals and balance aswell as the date they are made. 
 
+## Approach
+I chose to use Ruby for this task as I wanted to refresh my mind on how to use it. I also thought this is a fairly straight forward app and therefore Ruby would be a good choice. I started by thinking about what were the different elements, (which would be created using methods), that would be needed to create the end result. 
+
+I would need a balance and then be able to add and subtract from it. I would alos need a realtime time generator so the transactions would be ordered and given a timestamp. I would then need a 'Statement' method in order to return a list of transactions.  
 ### How to run:
 1. Clone repository and run 'bundle install'.
 2. Run 'irb' in the command line.
