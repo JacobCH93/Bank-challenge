@@ -1,5 +1,5 @@
 class Bank
-attr_accessor :statement, :balance, :amount, :date, :a_space, :divider
+attr_accessor :statement, :balance, :amount, :date, :divider
 
     def initialize
         @balance = 0
@@ -11,12 +11,8 @@ attr_accessor :statement, :balance, :amount, :date, :a_space, :divider
         date = time.strftime('%d/%m/%Y')
     end
 
-    def space(a_space)
-        a_space = ' ||          ||'
-    end
-
     def seperator(divider)
-        divider = ' ||   '
+        divider = ' || '
     end
 
     def deposit(amount)
@@ -24,7 +20,7 @@ attr_accessor :statement, :balance, :amount, :date, :a_space, :divider
         return (@statement << [generate_date(date), 
         seperator(divider), 
         ("#{amount.round(2)}"), 
-        space(a_space),
+        seperator(divider), seperator(divider),
         ("#{@balance.round(2)}")])
     end
 
@@ -32,14 +28,14 @@ attr_accessor :statement, :balance, :amount, :date, :a_space, :divider
         fail "Insufficent funds" if  @balance - amount < 0
         @balance -= amount
         return (@statement << [generate_date(date),
-        space(a_space),
+        seperator(divider), seperator(divider),
         ("#{amount.round(2)}"),
         seperator(divider), 
         ("#{@balance.round(2)}")])
     end
 
     def generate_statement
-        puts "   Date     ||  Credit  ||   Debit  ||  Balance "
+        puts "  Date  ||  Credit  ||  Debit  ||  Balance "
         @statement.each do |date|
         puts date.join(" ")
         end

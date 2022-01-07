@@ -19,7 +19,7 @@ I would need a balance and then be able to add and subtract from it. I would alo
 ## You should get something like this in your IRB
 ```
      Date    ||  Credit ||   Debit      ||  Balance
-05/01/2022   ||   £70   ||              ||  £70
-05/01/2022   ||         ||   £10.11     ||  £59.89
-05/01/2022   ||         ||   £10.11     ||  £49.78
+05/01/2022   ||    70   ||              ||   70
+05/01/2022   ||         ||    10.11     ||   59.89
+05/01/2022   ||         ||    10.11     ||   49.78
 ```
