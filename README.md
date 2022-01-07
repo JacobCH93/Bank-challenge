@@ -25,6 +25,7 @@ I would need a balance and then be able to add and subtract from it. I would alo
 ```
 
 ## Example of the program in use
-<img width="777" alt="Screenshot 2022-01-06 at 16 16 03" src="https://user-images.githubusercontent.com/77504397/148415021-5b93ebf3-e03d-497b-b9ae-881b803127af.png">
+<img width="777" alt="Screenshot 2022-01-07 at 13 48 53" src="https://user-images.githubusercontent.com/77504397/148553223-757778e9-40a9-4941-8249-f71ddc6f0843.png">
+
 
 
